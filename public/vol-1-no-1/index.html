@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://matside.com.au/vol-1-no-1/">
+<meta property="og:site_name" content="Matside">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matside — Vol. 1 No. 1">
+<meta property="og:description" content="Vol. 1 No. 1, 7 September 2026 — Eight From Carrara.">
+<meta property="og:url" content="https://matside.com.au/vol-1-no-1/">
+<meta name="twitter:card" content="summary">
+<title>Matside — Vol. 1 No. 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700;6..96,900&family=Archivo:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#ECEDEA;
+  --paper-2:#E3E5E1;
+  --ink:#15191A;
+  --ink-soft:#3A4243;
+  --mid:#6B7375;
+  --rule:#C6CAC5;
+  --rule-soft:#D7DAD5;
+  --oob:#C8102E;
+  --oob-ink:#C8102E;
+  --score:#1E6B4C;
+  --box:#E7E9E5;
+  --shadow:rgba(21,25,26,.08);
+
+  --f-plate:"Bodoni Moda",Didot,"Times New Roman",serif;
+  --f-head:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-data:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121516;
+    --paper-2:#191D1E;
+    --ink:#E5E8E5;
+    --ink-soft:#B5BCBA;
+    --mid:#8C9593;
+    --rule:#2E3435;
+    --rule-soft:#242A2B;
+    --oob:#F0455A;
+    --oob-ink:#F0455A;
+    --score:#4FB98A;
+    --box:#1A1E1F;
+    --shadow:rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121516;
+  --paper-2:#191D1E;
+  --ink:#E5E8E5;
+  --ink-soft:#B5BCBA;
+  --mid:#8C9593;
+  --rule:#2E3435;
+  --rule-soft:#242A2B;
+  --oob:#F0455A;
+  --oob-ink:#F0455A;
+  --score:#4FB98A;
+  --box:#1A1E1F;
+  --shadow:rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.sheet{max-width:1180px;margin:0 auto;padding:0 28px 80px}
+
+/* ---------- folio ---------- */
+.folio{
+  display:flex;flex-wrap:wrap;gap:14px 26px;align-items:baseline;
+  padding:16px 0 12px;
+  font-family:var(--f-data);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--mid);
+}
+.folio .sep{color:var(--rule)}
+.folio b{color:var(--ink);font-weight:600}
+
+/* ---------- nameplate ---------- */
+.plate{border-top:1px solid var(--rule);padding-top:26px}
+.plate h1{
+  font-family:var(--f-plate);
+  font-weight:900;
+  font-size:clamp(58px,13.5vw,168px);
+  line-height:.82;
+  letter-spacing:-.015em;
+  margin:0;
+  text-align:center;
+  font-variation-settings:"opsz" 96;
+}
+.plate .sub{
+  display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  margin-top:18px;
+  font-family:var(--f-head);font-size:10.5px;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--mid);
+}
+.plate .sub span:nth-child(2){text-align:right}
+/* the mark: the out-of-bounds line */
+.oob-rule{height:5px;background:var(--oob);margin-top:14px}
+.oob-rule.thin{height:2px}
+
+/* ---------- clock strip ---------- */
+.strip{
+  display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;
+  padding:14px 0 16px;border-bottom:1px solid var(--rule);
+  font-family:var(--f-data);
+}
+.strip .to{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.strip .to-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid)}
+.clock{
+  font-size:clamp(24px,4.6vw,40px);font-weight:600;letter-spacing:.02em;
+  font-variant-numeric:tabular-nums;color:var(--ink);
+}
+.clock .u{font-size:.42em;color:var(--mid);margin:0 .5em 0 .1em;letter-spacing:.1em}
+.zones{display:flex;gap:20px;font-size:11px;color:var(--mid)}
+.zones div{text-align:right}
+.zones .z{display:block;font-size:9.5px;letter-spacing:.16em;color:var(--mid)}
+.zones .t{font-size:15px;color:var(--ink);font-variant-numeric:tabular-nums;font-weight:500}
+
+/* ---------- front page grid ---------- */
+.front{
+  display:grid;
+  grid-template-columns:minmax(0,2.05fr) minmax(0,1fr);
+  gap:0 38px;
+  padding-top:30px;
+}
+.rail{border-left:1px solid var(--rule);padding-left:26px}
+
+.kicker{
+  font-family:var(--f-head);font-size:10.5px;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--oob-ink);
+  display:block;margin-bottom:12px;
+}
+.section-label{
+  font-family:var(--f-head);font-size:10.5px;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
+  display:flex;align-items:center;gap:12px;margin:0 0 16px;
+}
+.section-label::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+h2.lead{
+  font-family:var(--f-head);
+  font-weight:800;
+  font-size:clamp(38px,5.6vw,68px);
+  line-height:.96;
+  letter-spacing:-.026em;
+  margin:0 0 16px;
+  text-wrap:balance;
+}
+.deck{
+  font-family:var(--f-body);font-size:clamp(18px,2.1vw,22px);line-height:1.42;
+  color:var(--ink-soft);margin:0 0 22px;max-width:34em;text-wrap:balance;
+}
+.byline{
+  font-family:var(--f-data);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mid);
+  padding-bottom:14px;border-bottom:1px solid var(--rule);margin-bottom:20px;
+}
+.byline b{color:var(--ink);font-weight:600}
+
+.cols{columns:2;column-gap:34px;column-rule:1px solid var(--rule-soft)}
+.cols p{margin:0 0 1.05em;max-width:34em}
+.cols p:first-child{margin-top:0}
+.cols p .dateline{
+  font-family:var(--f-data);font-size:11.5px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink);
+}
+.cols p:first-of-type::first-letter{
+  font-family:var(--f-plate);font-weight:700;
+  float:left;font-size:3.05em;line-height:.78;
+  padding:.06em .1em 0 0;color:var(--oob-ink);
+}
+.pull{
+  break-inside:avoid;margin:0 0 1.05em;padding:16px 0;
+  border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);
+  font-family:var(--f-head);font-weight:600;font-size:19px;line-height:1.25;
+  letter-spacing:-.012em;color:var(--ink);
+}
+.second{margin-top:26px;padding-top:20px;border-top:2px solid var(--ink)}
+.second .kicker{margin-bottom:8px}
+h2.sub-lead{
+  font-family:var(--f-head);font-weight:800;font-size:clamp(26px,3.6vw,40px);
+  line-height:1.02;letter-spacing:-.024em;margin:0 0 14px;text-wrap:balance;
+}
+.second p{margin:0 0 .95em;max-width:40em;color:var(--ink-soft)}
+.second p:last-child{margin-bottom:0}
+.second b{color:var(--ink);font-weight:600}
+
+/* ---------- wire ---------- */
+.wire{list-style:none;margin:0;padding:0}
+.wire li{padding:14px 0;border-bottom:1px solid var(--rule-soft)}
+.wire li:first-child{padding-top:0}
+.wire .place{
+  font-family:var(--f-data);font-size:10px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--oob-ink);display:block;margin-bottom:5px;
+}
+.wire h3{
+  font-family:var(--f-head);font-weight:700;font-size:16.5px;line-height:1.2;
+  letter-spacing:-.012em;margin:0 0 5px;
+}
+.wire p{margin:0;font-size:14.5px;line-height:1.48;color:var(--ink-soft)}
+.wire .fig{font-family:var(--f-data);font-weight:600;color:var(--ink);font-size:13.5px;font-variant-numeric:tabular-nums}
+
+/* ---------- standing box ---------- */
+.pledge{
+  margin-top:26px;background:var(--box);border-top:3px solid var(--oob);
+  padding:20px 20px 18px;
+}
+.pledge h3{
+  font-family:var(--f-head);font-size:11px;font-weight:800;letter-spacing:.18em;
+  text-transform:uppercase;margin:0 0 12px;
+}
+.pledge ol{margin:0;padding:0;list-style:none;counter-reset:p}
+.pledge li{
+  counter-increment:p;position:relative;padding-left:26px;margin-bottom:10px;
+  font-size:14.5px;line-height:1.44;color:var(--ink-soft);
+}
+.pledge li:last-child{margin-bottom:0}
+.pledge li::before{
+  content:counter(p);position:absolute;left:0;top:.15em;
+  font-family:var(--f-data);font-size:11px;font-weight:600;color:var(--oob-ink);
+}
+.pledge-link{
+  display:inline-block;margin-top:14px;padding-top:12px;border-top:1px solid var(--rule);
+  width:100%;font-family:var(--f-data);font-size:10.5px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--oob-ink);text-decoration:none;
+}
+.pledge-link:hover,.pledge-link:focus-visible{color:var(--ink)}
+:focus-visible{outline:2px solid var(--oob);outline-offset:3px}
+
+/* ---------- record ---------- */
+.record{margin-top:44px;padding-top:20px;border-top:3px solid var(--ink)}
+.record .head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:6px}
+.record h2{
+  font-family:var(--f-head);font-weight:800;font-size:clamp(24px,3vw,34px);
+  letter-spacing:-.02em;margin:0;
+}
+.record .note{font-family:var(--f-data);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)}
+.record-link{
+  display:inline-block;margin-top:6px;font-family:var(--f-data);font-size:11px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--oob-ink);text-decoration:none;
+  border-bottom:1px solid var(--rule);
+}
+.record-link:hover,.record-link:focus-visible{border-color:var(--oob)}
+.record .intro{font-size:15.5px;color:var(--ink-soft);max-width:60em;margin:8px 0 22px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:660px;font-family:var(--f-data);font-size:13px;font-variant-numeric:tabular-nums}
+thead th{
+  text-align:left;font-size:9.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mid);padding:0 14px 8px 0;border-bottom:1px solid var(--rule);
+}
+tbody td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);vertical-align:baseline}
+tbody tr:hover td{background:var(--paper-2)}
+td.div{color:var(--mid);letter-spacing:.04em;white-space:nowrap}
+td.gold{font-weight:600;color:var(--ink)}
+td.nat{color:var(--mid);white-space:nowrap}
+td.line{color:var(--ink-soft)}
+.tag{
+  font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--oob-ink);
+  border:1px solid var(--oob);padding:1px 5px;margin-left:8px;white-space:nowrap;
+}
+
+/* ---------- corner ---------- */
+.corner{
+  margin-top:52px;padding-top:22px;border-top:3px solid var(--ink);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:0 38px;
+}
+.corner .stack{padding-right:20px}
+.corner h2{
+  font-family:var(--f-head);font-weight:800;font-size:clamp(30px,4.2vw,50px);
+  line-height:.98;letter-spacing:-.024em;margin:10px 0 14px;text-wrap:balance;
+}
+.corner .sig{
+  font-family:var(--f-data);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mid);margin-top:18px;padding-top:14px;border-top:1px solid var(--rule);
+}
+.corner .sig b{display:block;color:var(--ink);font-weight:600;margin-bottom:3px;letter-spacing:.14em}
+.corner .body p{margin:0 0 1.05em;max-width:36em}
+.corner .body p:first-child{margin-top:0}
+.corner .body .dateline{
+  font-family:var(--f-data);font-size:11.5px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink);
+}
+
+/* ---------- masthead footer ---------- */
+.foot{margin-top:56px;padding-top:22px;border-top:1px solid var(--rule)}
+.sections{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 26px}
+.sections div{border-top:2px solid var(--ink);padding-top:12px}
+.sections h4{
+  font-family:var(--f-head);font-size:11.5px;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;margin:0 0 7px;
+}
+.sections p{margin:0;font-size:14px;line-height:1.45;color:var(--ink-soft)}
+.colophon{
+  margin-top:30px;padding-top:18px;border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;
+  font-family:var(--f-data);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);
+}
+
+@media (max-width:900px){
+  .front{grid-template-columns:minmax(0,1fr);gap:34px}
+  .rail{border-left:0;padding-left:0;border-top:2px solid var(--ink);padding-top:20px}
+  .cols{columns:1}
+  .corner{grid-template-columns:minmax(0,1fr);gap:24px}
+  .corner .stack{padding-right:0}
+  .sections{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .strip{grid-template-columns:minmax(0,1fr);gap:14px}
+  .zones{justify-content:flex-start}
+}
+@media (max-width:560px){
+  .sheet{padding:0 18px 60px}
+  .sections{grid-template-columns:minmax(0,1fr)}
+  .plate .sub{flex-direction:column;gap:6px}
+  .plate .sub span:nth-child(2){text-align:left}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>
+  html{-webkit-text-size-adjust:100%}
+  @media print{
+    .plate-band{background:#fff !important;color:#15191A !important}
+    .plate-band .lbl,.negate-note,.question-kr,.cell-kr{color:#3A4243 !important}
+    .cell-en{color:#15191A !important}
+    .matrix-scroll{overflow:visible}
+    table.matrix{min-width:0}
+    .beat,.plate-band,.card,.art,.fixrow,.wire li{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="folio">
+    <span><b>Vol. 1 · No. 1</b></span><span class="sep">/</span>
+    <span>Monday 7 September 2026</span><span class="sep">/</span>
+    <span>Published in Melbourne, Australia</span><span class="sep">/</span>
+    <span>Independent · No broadcast rights · No affiliate links</span>
+  </div>
+
+  <header class="plate">
+    <h1>MATSIDE</h1>
+    <div class="oob-rule"></div>
+    <div class="sub">
+      <span>The grappling paper of record — Asia &amp; Oceania desk</span>
+      <span>matside.com.au</span>
+    </div>
+  </header>
+
+  <div class="strip">
+    <div class="to">
+      <span class="to-label">Time to Kraków</span>
+      <span class="clock" id="clock" aria-live="off">—</span>
+    </div>
+    <div class="zones">
+      <div><span class="z">MEL</span><span class="t" id="t-mel">—</span></div>
+      <div><span class="z">KRK</span><span class="t" id="t-krk">—</span></div>
+      <div><span class="z">LAS</span><span class="t" id="t-las">—</span></div>
+    </div>
+  </div>
+
+  <div class="front">
+
+    <article>
+      <span class="kicker">Exclusive · ADCC World Championship · Kraków, 12–13 September</span>
+      <h2 class="lead">Eight From Carrara</h2>
+      <p class="deck">One afternoon on the Gold Coast decided every seat Asia and Oceania will occupy at the world championship of their sport. Eleven weeks later, two of the eight are still misidentified in print. Matside has checked all of them against the official record.</p>
+      <div class="byline">By <b>The Cornerman</b> · Matside · Melbourne</div>
+
+      <div class="cols">
+        <p><span class="dateline">Melbourne —</span> The ADCC World Championship opens in Kraków on Saturday with 104 competitors. North America and Europe each send athletes through multiple trials events. Asia and Oceania — a region running from Kazakhstan to New Zealand, taking in Japan, Korea, China and Hong Kong on the way — get one. It was held on 21 June at Carrara on the Gold Coast, it lasted a day, and the eight people who won it are the region's entire representation.</p>
+
+        <p>Six of them have never competed at an ADCC World Championship. In the eleven weeks since, the English-language grappling press has produced, between all of its outlets, a results list and about three paragraphs of analysis.</p>
+
+        <p>It also produced two errors that are still standing. The women's −55kg champion — the only athlete from East Asia in the delegation — has been named in print as <b>Kanae Yamada</b>. ADCC's official results say <b>Kanae Ikeda</b>, of IGLOO, Japan. And the −77kg champion, Kaya Rudolph, appears as Australian in FloGrappling's list of champions. ADCC's official record says <b>New Zealand</b>.</p>
+
+        <div class="pull">The second error has a consequence. The same article calls the +99kg winner the first New Zealander ever to take an ADCC Trials title — a claim that needs a qualifier if, as ADCC records, a second New Zealander won one in the same building on the same afternoon.</div>
+
+        <p>Read the official results by team rather than by nation and something else appears. Absolute MMA — the association Lachlan Giles leads from St Kilda, eight kilometres from this desk — has two of the eight qualifiers and two more on the podium behind them. A quarter of a region's world championship delegation came out of one Melbourne association.</p>
+
+        <p>That is not a regional development story. It is one room doing work that federations across the rest of the region are not doing, and nobody has written it down until now.</p>
+      </div>
+
+      <p style="margin:22px 0 0;padding:12px 0 0;border-top:2px solid var(--oob);font-family:var(--f-data);font-size:11px;line-height:1.75;letter-spacing:.03em;color:var(--mid)"><b style="color:var(--ink)">Corrected 10 September 2026.</b> As published on 7 September this article stated that FloGrappling described Kaya Rudolph as Australian in its body text while the athlete list in the same article said New Zealand. It is the other way round: the champions list gives Australia, and the body text gives no nationality at all. ADCC's official record says New Zealand, and the finding is unchanged. § 4.1 — The Cornerman</p>
+
+      <div class="second">
+        <span class="kicker">Also on the card</span>
+        <h2 class="sub-lead">The first Worlds without him</h2>
+        <p>Gordon Ryan announced his retirement in February, citing long-running gut and immune problems, and vacated the superfight title he had held since 2022. He is thirty and he is not on the card. In his place ADCC has matched the last two absolute champions — <b>Kaynan Duarte</b>, who won the open class in 2024, against <b>Yuri Simões</b>, who won it in 2022 through a bracket that included Melbourne's Lachlan Giles.</p>
+        <p>It is the first ADCC World Championship staged in Europe since 2017 and the largest room the event has been given: Tauron Arena Kraków seats roughly 22,000. A sport that is genuinely deep does not notice when one athlete leaves. A sport built on one gravitational body notices immediately. On Saturday we find out which one this is.</p>
+      </div>
+    </article>
+
+    <aside class="rail">
+      <h2 class="section-label">The Wire</h2>
+      <ul class="wire">
+        <li>
+          <span class="place">Kraków</span>
+          <h3>Field set at 104 for Tauron Arena</h3>
+          <p>Five men's divisions of sixteen and three women's divisions of eight. First ADCC Worlds in Europe since 2017. <span class="fig">12–13 SEP</span></p>
+        </li>
+        <li>
+          <span class="place">Las Vegas</span>
+          <h3>UFC BJJ has run eight cards in its first year</h3>
+          <p>Dana White has said the UFC will put <span class="fig">US$10–12M</span> into jiu-jitsu over a year. The promotion, founded 2025, reached its eighth event in May.</p>
+        </li>
+        <li>
+          <span class="place">Undisclosed</span>
+          <h3>Craig Jones's $10M purse still has no date</h3>
+          <p>Announced in March as an eight-athlete, one-night event, with Craig Jones v Dillon Danis named as the headline in April. Reported on hold as of July. No date, no venue, no scheduled broadcast.</p>
+        </li>
+        <li>
+          <span class="place">Gold Coast</span>
+          <h3>Absolute MMA has a quarter of the region's delegation</h3>
+          <p>Two of the eight Kraków qualifiers, and two more podium places, came from the Melbourne-led association. <span class="fig">4 OF 24</span> podium spots at the trials.</p>
+        </li>
+        <li>
+          <span class="place">Seoul</span>
+          <h3>Korea's world-title count is still one</h3>
+          <p>Kira Sung's 2018 IBJJF world title, won at purple belt, remains the country's only one. The Seoul International Open runs on the IBJJF calendar this year.</p>
+        </li>
+      </ul>
+
+      <div class="pledge">
+        <h3>What Matside does not do</h3>
+        <ol>
+          <li>We do not own, sell or resell broadcast rights to any event we cover.</li>
+          <li>We carry no affiliate links. If we name a product, nobody paid us to.</li>
+          <li>We do not accept travel, lodging or access from a promotion in exchange for coverage.</li>
+          <li>We correct errors in place, dated and signed, and we do not delete them.</li>
+        </ol>
+        <a class="pledge-link" href="/standards/">Read the full charter — Standards &amp; Practice v1.1</a>
+      </div>
+    </aside>
+  </div>
+
+  <section class="record">
+    <div class="head">
+      <h2>The Record</h2>
+      <span class="note">ADCC Asia &amp; Oceania Trials · Carrara, Gold Coast QLD · 21 June 2026</span>
+    </div>
+    <p class="intro">Eight invitations to Kraków, decided in one day. This is the only qualifying event ADCC allocates to the entire Asia–Oceania region, and it is the reason the record below matters more here than anywhere else on the circuit. Names, nationalities and teams verified against ADCC's official results — two of them are recorded incorrectly elsewhere. Kept permanently, corrected in place. <a class="record-link" href="/long-match/eight-from-carrara/">The Long Match: all eight, and the two corrections →</a></p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Div</th><th>Champion</th><th>Nat</th><th>Team</th><th>Route to gold</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="div">M −66</td><td class="gold">Bekzat Kapashov</td><td class="nat">KAZ</td><td class="nat">ADCC Kazakhstan</td><td class="line">5 wins, 3 by submission</td></tr>
+          <tr><td class="div">M −77</td><td class="gold">Kaya Rudolph</td><td class="nat">NZL</td><td class="nat">Absolute MMA</td><td class="line">6 wins in one day, 4 by submission <span class="tag">Longest run</span></td></tr>
+          <tr><td class="div">M −88</td><td class="gold">Roberto Dib Frias</td><td class="nat">AUS</td><td class="nat">One Purpose BJJ</td><td class="line">5 wins, 1 by submission</td></tr>
+          <tr><td class="div">M −99</td><td class="gold">Daniel Schuardt</td><td class="nat">AUS</td><td class="nat">Precision MMA</td><td class="line">2 submissions, 2 decisions; 11–0 final</td></tr>
+          <tr><td class="div">M +99</td><td class="gold">Belal Etiabari</td><td class="nat">NZL</td><td class="nat">Absolute MMA</td><td class="line">3 of 4 by submission <span class="tag">Best finish rate</span></td></tr>
+          <tr><td class="div">W −55</td><td class="gold">Kanae Ikeda</td><td class="nat">JPN</td><td class="nat">IGLOO</td><td class="line">4 wins; def. Ciccarelli in the final</td></tr>
+          <tr><td class="div">W −65</td><td class="gold">Nadia Frankland</td><td class="nat">AUS</td><td class="nat">Peninsula MMA</td><td class="line">4 wins; first Trials title</td></tr>
+          <tr><td class="div">W +65</td><td class="gold">Matilda Reid</td><td class="nat">AUS</td><td class="nat">Essence BJJ</td><td class="line">4 wins at 17, as a blue belt <span class="tag">Youngest champion</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="corner">
+    <div class="stack">
+      <span class="kicker">The Corner · Founding editorial</span>
+      <h2>We are starting a newspaper at the edge of the mat</h2>
+      <div class="sig">
+        <b>The Cornerman</b>
+        Editor · Melbourne · 7 September 2026
+      </div>
+    </div>
+    <div class="body">
+      <p><span class="dateline">Melbourne —</span> Here is the arrangement as it stands. FloSports holds exclusive worldwide media rights to ADCC — all eight trials, the Amateur World Championship, and the World Championship itself, extended through this year. FloGrappling, the same company, also operates the largest editorial desk in grappling. Its annual subscription is US$150. Much of the rest of what you can read about this sport is written by sites that carry the affiliate link to that subscription at the bottom of the page.</p>
+
+      <p>I want to be exact, because exactness is the point: none of that is a scandal, and none of it is illegal. FloSports has done more to make this sport visible than any newspaper ever did. But a company that sells the event cannot also be the paper of record for the event, and everybody in grappling has quietly agreed to pretend otherwise because the alternative was nothing at all.</p>
+
+      <p>Roughly US$20 million in prize money and investment has been announced for this sport inside eighteen months — the UFC's stated $10–12 million commitment, Craig Jones's $10 million purse. One of those has produced eight events. The other has produced a press release and, five months on, no date. Nobody independent is keeping the ledger.</p>
+
+      <p>So: Matside. We are based in Melbourne, which is not an accident. This city has supported a daily broadsheet since 1854 and has produced, in Absolute MMA St Kilda, one of the most consequential grappling rooms in the world — the room that made Lachlan Giles, who in 2019 became the first Australian to medal in the ADCC absolute by heel-hooking three men far bigger than him. Melbourne also sits inside the region ADCC compresses into a single trials afternoon. We are not covering the rounding error from outside it. We live in it.</p>
+
+      <p>We own no rights. We sell no tickets. We take no cut of anything that happens on the mat. We sit at the edge of it, outside the line, and we write down what happened.</p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="sections">
+      <div>
+        <h4>The Record</h4>
+        <p>Results, promotions, transfers and rankings — kept accurately and kept permanently. Corrected in place.</p>
+      </div>
+      <div>
+        <h4>The Long Match</h4>
+        <p>One or two reported features a week. Named for the twenty minutes of an ADCC final, where nothing is scored early.</p>
+      </div>
+      <div>
+        <h4>The Wire</h4>
+        <p>Short news, filed as it happens, with the dateline and the source attached to every line.</p>
+      </div>
+      <div>
+        <h4>The Corner</h4>
+        <p>Editorial and the weekly digest. The corner is where the voice comes from, and it is signed.</p>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>Matside · Vol. 1 No. 1 · Melbourne, Australia</span>
+      <span>Edited by The Cornerman · Tips: tips@matside.com.au · Corrections: corrections@matside.com.au</span>
+      <span>Set in Bodoni Moda, Archivo, Source Serif 4 &amp; IBM Plex Mono</span>
+      <span>Instagram <a href="https://www.instagram.com/matside_bjj" rel="me noopener" target="_blank" style="color:var(--oob);text-decoration:none;text-transform:none;border-bottom:1px solid var(--rule)">@matside_bjj</a></span>
+  </div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var target = Date.parse("2026-09-12T00:00:00+02:00");
+  var clock = document.getElementById("clock");
+  var z = [["t-mel","Australia/Melbourne"],["t-krk","Europe/Warsaw"],["t-las","America/Los_Angeles"]];
+
+  function pad(n){ return (n<10?"0":"") + n; }
+
+  function tick(){
+    var now = Date.now();
+    var d = Math.max(0, target - now);
+    var days = Math.floor(d/86400000);
+    var hrs  = Math.floor(d/3600000) % 24;
+    var mins = Math.floor(d/60000) % 60;
+    var secs = Math.floor(d/1000) % 60;
+    if (d === 0) {
+      clock.textContent = "CONCLUDED \u00b7 12\u201313 SEP";
+    } else {
+      clock.innerHTML = days + '<span class="u">d</span>' + pad(hrs) + '<span class="u">h</span>' +
+                        pad(mins) + '<span class="u">m</span>' + pad(secs) + '<span class="u">s</span>';
+    }
+    for (var i=0;i<z.length;i++){
+      var el = document.getElementById(z[i][0]);
+      if (!el) continue;
+      try {
+        el.textContent = new Date().toLocaleTimeString("en-GB", {
+          timeZone: z[i][1], hour: "2-digit", minute: "2-digit", hour12: false
+        });
+      } catch(e){ el.textContent = "--:--"; }
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>

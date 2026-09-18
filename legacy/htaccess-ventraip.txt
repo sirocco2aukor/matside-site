@@ -1,0 +1,23 @@
+# Matside — VentraIP / Apache
+RewriteEngine On
+
+# force https + canonical host (matside.site -> matside.com.au)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^matside\.com\.au$ [NC]
+RewriteRule ^(.*)$ https://matside.com.au/$1 [R=301,L]
+
+# drop index.html from the address bar
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+AddDefaultCharset UTF-8

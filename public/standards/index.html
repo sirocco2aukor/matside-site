@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://matside.com.au/standards/">
+<meta property="og:site_name" content="Matside">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matside Standards">
+<meta property="og:description" content="Matside's public editorial charter — Standards & Practice v1.1.">
+<meta property="og:url" content="https://matside.com.au/standards/">
+<meta name="twitter:card" content="summary">
+<title>Matside Standards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,900&family=Archivo:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#ECEDEA; --paper-2:#E3E5E1; --ink:#15191A; --ink-soft:#3A4243;
+  --mid:#6B7375; --rule:#C6CAC5; --rule-soft:#D7DAD5; --oob:#C8102E; --box:#E7E9E5;
+  --f-plate:"Bodoni Moda",Didot,"Times New Roman",serif;
+  --f-head:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121516; --paper-2:#191D1E; --ink:#E5E8E5; --ink-soft:#B5BCBA;
+    --mid:#8C9593; --rule:#2E3435; --rule-soft:#242A2B; --oob:#F0455A; --box:#1A1E1F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121516; --paper-2:#191D1E; --ink:#E5E8E5; --ink-soft:#B5BCBA;
+  --mid:#8C9593; --rule:#2E3435; --rule-soft:#242A2B; --oob:#F0455A; --box:#1A1E1F;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.sheet{max-width:940px;margin:0 auto;padding:0 28px 80px}
+
+.runhead{
+  display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:baseline;
+  padding:16px 0 12px;border-bottom:1px solid var(--rule);
+  font-family:var(--f-data);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);
+}
+.runhead .plate{font-family:var(--f-plate);font-weight:900;font-size:20px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.runhead a{color:var(--mid);text-decoration:none;border-bottom:1px solid var(--rule)}
+.runhead a:hover,.runhead a:focus-visible{color:var(--oob);border-color:var(--oob)}
+
+.title{padding:44px 0 0}
+.title .eyebrow{font-family:var(--f-head);font-size:10.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--oob)}
+.title h1{
+  font-family:var(--f-head);font-weight:800;font-size:clamp(38px,6.4vw,72px);
+  line-height:.97;letter-spacing:-.028em;margin:14px 0 18px;text-wrap:balance;
+}
+.title .deck{font-size:clamp(18px,2.2vw,21px);line-height:1.45;color:var(--ink-soft);max-width:36em;margin:0}
+.oob-rule{height:5px;background:var(--oob);margin:30px 0 0}
+
+.meta{
+  display:flex;flex-wrap:wrap;gap:10px 34px;padding:14px 0 0;
+  font-family:var(--f-data);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--mid);
+}
+.meta b{color:var(--ink);font-weight:600}
+
+.preamble{
+  margin-top:34px;padding:22px 24px;background:var(--box);border-top:2px solid var(--ink);
+}
+.preamble p{margin:0 0 .9em;max-width:38em}
+.preamble p:last-child{margin-bottom:0}
+
+/* ---- ruleset ---- */
+.part{margin-top:52px}
+.part > h2{
+  font-family:var(--f-head);font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  margin:0 0 4px;display:flex;align-items:center;gap:14px;
+}
+.part > h2::after{content:"";flex:1;height:2px;background:var(--ink)}
+.part > .part-note{font-family:var(--f-data);font-size:11px;color:var(--mid);margin:0 0 18px}
+
+.art{
+  display:grid;grid-template-columns:76px minmax(0,1fr);gap:0 22px;
+  padding:20px 0;border-bottom:1px solid var(--rule-soft);
+}
+.art:last-child{border-bottom:0}
+.art .n{
+  font-family:var(--f-data);font-size:12.5px;font-weight:600;color:var(--oob);
+  letter-spacing:.04em;padding-top:.24em;font-variant-numeric:tabular-nums;
+}
+.art h3{font-family:var(--f-head);font-weight:700;font-size:18.5px;line-height:1.24;letter-spacing:-.014em;margin:0 0 9px}
+.art p{margin:0 0 .8em;max-width:38em;color:var(--ink-soft)}
+.art p:last-child{margin-bottom:0}
+.art p strong{color:var(--ink);font-weight:600}
+.art ul{margin:0 0 .8em;padding-left:1.1em;max-width:38em;color:var(--ink-soft)}
+.art li{margin-bottom:.35em}
+.art .hard{
+  font-family:var(--f-data);font-size:12.5px;line-height:1.55;color:var(--ink);
+  border-left:2px solid var(--oob);padding:2px 0 2px 14px;margin:12px 0 0;max-width:40em;
+}
+
+.amend{margin-top:52px;padding-top:22px;border-top:3px solid var(--ink)}
+.amend h2{font-family:var(--f-head);font-weight:800;font-size:clamp(22px,3vw,30px);letter-spacing:-.02em;margin:0 0 12px}
+.amend p{margin:0 0 .9em;max-width:38em;color:var(--ink-soft)}
+.log{margin-top:18px;font-family:var(--f-data);font-size:12.5px;border-top:1px solid var(--rule)}
+.log div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:0 20px;padding:11px 0;border-bottom:1px solid var(--rule-soft)}
+.log .v{color:var(--oob);font-weight:600}
+.log .d{color:var(--ink-soft)}
+
+.colophon{
+  margin-top:44px;padding-top:18px;border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;
+  font-family:var(--f-data);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--oob);outline-offset:3px}
+
+@media (max-width:640px){
+  .sheet{padding:0 18px 60px}
+  .art{grid-template-columns:minmax(0,1fr);gap:8px}
+  .art .n{padding-top:0}
+  .log div{grid-template-columns:minmax(0,1fr);gap:4px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>
+  html{-webkit-text-size-adjust:100%}
+  @media print{
+    .plate-band{background:#fff !important;color:#15191A !important}
+    .plate-band .lbl,.negate-note,.question-kr,.cell-kr{color:#3A4243 !important}
+    .cell-en{color:#15191A !important}
+    .matrix-scroll{overflow:visible}
+    table.matrix{min-width:0}
+    .beat,.plate-band,.card,.art,.fixrow,.wire li{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="runhead">
+    <span class="plate">MATSIDE</span>
+    <span>Standards &amp; Practice · Version 1.1</span>
+    <span>Melbourne, Australia</span>
+  </div>
+
+  <div class="title">
+    <span class="eyebrow">Public editorial charter</span>
+    <h1>What we will and will not do</h1>
+    <p class="deck">Every outlet says it is independent. Independence is only worth anything when it is written down as rules that cost us something, published where readers can check them, and enforced when they are inconvenient. These are ours.</p>
+    <div class="oob-rule"></div>
+    <div class="meta">
+      <span>Effective <b>7 September 2026</b> · amended <b>10 September 2026</b></span>
+      <span>Applies to <b>all sections and all contributors</b></span>
+      <span>Complaints <b>standards@matside.com.au</b></span>
+    </div>
+  </div>
+
+  <div class="preamble">
+    <p>Grappling is covered, for the most part, by companies that sell grappling. Broadcasters run the largest newsrooms. Independent sites carry affiliate links to the subscriptions those broadcasters sell. None of that is hidden and none of it is unlawful — but it means the sport has never had a paper whose only obligation is to the reader.</p>
+    <p>Matside exists to be that paper. This document is the mechanism. It is not a statement of values; it is a list of things we have given up, so that a reader who does not trust us has something concrete to hold us to.</p>
+  </div>
+
+  <!-- PART ONE -->
+  <section class="part">
+    <h2>Part One · Money and independence</h2>
+    <p class="part-note">The conflicts that are specific to this sport, named individually.</p>
+
+    <div class="art">
+      <div class="n">§ 1.1</div>
+      <div>
+        <h3>We hold no rights to anything we cover</h3>
+        <p>Matside will not own, buy, sell, broker or co-own broadcast, streaming or event rights to any competition, and will not take an equity or revenue position in any promotion, federation, gym, apparel brand or instructional platform.</p>
+        <p class="hard">If we ever acquire such an interest, we stop covering that party the same day and say so on the front page.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 1.2</div>
+      <div>
+        <h3>No affiliate links, ever</h3>
+        <p>We carry no affiliate or referral links, no commission arrangements on subscriptions, instructionals, gis, supplements or tickets, and no sponsored posts presented as editorial. If we name a product or a streaming service, nobody paid us to name it.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 1.3</div>
+      <div>
+        <h3>We pay our own way to the event</h3>
+        <p>Matside pays for its own travel, accommodation, tickets and subscriptions. We accept working press credentials, because a credential is access rather than value — but nothing beyond the credential.</p>
+        <p>Where a story genuinely cannot be reported without accepting something of value from an interested party, we disclose it in the article, at the top, in the reader's language rather than a footnote.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 1.4</div>
+      <div>
+        <h3>Contributors declare their mats</h3>
+        <p>In this sport almost everyone who can report on it also trains. That is an asset, and it is also a conflict. Every Matside contributor keeps a standing public declaration of their academy, affiliation, coach and competitive team.</p>
+        <p>A contributor does not report on their own academy, their own team, their own coach, or a direct competitor of any of them. Someone else takes the story.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 1.5</div>
+      <div>
+        <h3>Advertising cannot buy the desk</h3>
+        <p>If Matside sells advertising or takes reader support, no advertiser, member or donor sees a story before publication, and no commercial party is told what we are working on. Any single source of more than <strong>15%</strong> of annual revenue is disclosed by name in this document.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART TWO -->
+  <section class="part">
+    <h2>Part Two · Reporting</h2>
+    <p class="part-note">How a claim gets onto the page.</p>
+
+    <div class="art">
+      <div class="n">§ 2.1</div>
+      <div>
+        <h3>Named sources are the default</h3>
+        <p>We use named, on-record sources unless anonymity is the only way a story of real public interest can be told, and the source faces a credible cost for speaking — losing a sponsorship, a place on a team, a visa, a career.</p>
+        <p>Where we grant anonymity we tell the reader why, and we describe the source's position closely enough to be judged. "Sources say" without that is not reporting.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 2.2</div>
+      <div>
+        <h3>Two sources for any allegation against a person</h3>
+        <p>No allegation of misconduct, abuse, fraud, doping or rule-breaking is published on a single source, however senior. Documentary evidence counts as a source; a second person repeating the first does not.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 2.3</div>
+      <div>
+        <h3>Right of reply before publication, not after</h3>
+        <p>Anyone facing a substantive criticism or allegation is put to the specific claims in writing before we publish, with a reasonable deadline — normally <strong>48 hours</strong>, shorter only where there is genuine urgency, and we state in the article what deadline we gave.</p>
+        <p>Silence is reported as silence: "declined to comment" and "did not respond" are different facts and we do not confuse them.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 2.4</div>
+      <div>
+        <h3>Results are verified against the bracket</h3>
+        <p>Every result in <strong>The Record</strong> is checked against the official bracket or federation result, not against another outlet's report. Where we cannot verify a result, we publish it as unverified and name what is missing.</p>
+        <p>Where we take a fact from another publication, we say which publication, in the sentence.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 2.5</div>
+      <div>
+        <h3>Reported speech is not translated into a claim</h3>
+        <p>A promotion's announcement is a promotion's announcement. Prize money that has been pledged is not prize money that has been paid, and we write the difference every time. Where a purse, a signing or a date has been announced but not delivered, we say when it was announced and what has happened since.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART THREE -->
+  <section class="part">
+    <h2>Part Three · Athletes</h2>
+    <p class="part-note">Obligations that come from covering a sport of individuals, many of them young and most of them unpaid.</p>
+
+    <div class="art">
+      <div class="n">§ 3.1</div>
+      <div>
+        <h3>Health is reported from the athlete, not about them</h3>
+        <p>We report an athlete's illness, injury or medical condition only from what they or an authorised representative have put on the record, from a public medical or regulatory filing, or where the condition is directly and demonstrably relevant to a competition outcome.</p>
+        <p>We do not diagnose, do not speculate about causes, and do not build a story on a physique, a weight change or a photograph.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 3.2</div>
+      <div>
+        <h3>Doping: tests and findings, not rumours</h3>
+        <p>We report anti-doping matters at the point of an official finding, sanction, admission, or a documented failed test. We do not publish accusations traded between athletes as though they were findings, and we always name the testing body and the standard applied.</p>
+        <p class="hard">An athlete who has served a sanction is not described by it forever. We state it where relevant to the story and not as a permanent epithet.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 3.3</div>
+      <div>
+        <h3>Competitors under 18</h3>
+        <p>Youth and juvenile divisions are real competition and we cover them. For a competitor under eighteen we publish only what the bracket itself records — name, age or age category, belt, weight division, team, and result — together with which competition they entered. Nothing further: no home town, no school, no training schedule, no contact details, no photographs we did not obtain properly.</p>
+        <p>Where a minor has entered an adult division, we say so. The entry standard is a matter of public interest about the competition, not a private fact about the child.</p>
+        <p>We do not characterise a minor beyond the record. We do not describe their prospects, project how they will perform, weigh them against their opponents, or build a story on their age. We do not interview a minor without a parent or guardian's consent, and we do not report a minor's medical information, family circumstances or disciplinary matters at all.</p>
+        <p class="hard">If a sentence about a competitor under eighteen would not survive being read aloud to their parent, it does not run.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 3.4</div>
+      <div>
+        <h3>Weight, bodies and eating</h3>
+        <p>Weight cutting is a legitimate and under-reported safety story in grappling and we will report it. We will not publish a specific cutting protocol, dehydration method or extreme regimen as instruction, and we will not describe an athlete's body as a moral condition.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 3.5</div>
+      <div>
+        <h3>Not everyone we cover is a public figure</h3>
+        <p>A world-title contender, a promoter and a federation official have accepted scrutiny. A white belt at a local open has not. The level of private detail we publish scales with how public the person's role actually is, not with how interesting the detail is.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART FOUR -->
+  <section class="part">
+    <h2>Part Four · The record</h2>
+    <p class="part-note">What happens to a story after it is published.</p>
+
+    <div class="art">
+      <div class="n">§ 4.1</div>
+      <div>
+        <h3>Corrections run in place, dated and signed</h3>
+        <p>An error is corrected on the article itself, with the date, what was wrong, what is now correct, and who made the correction. Corrections are never made silently and never made by deletion.</p>
+        <p>A correction that changes the meaning of a story is also listed on the corrections page, which is permanent and public.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 4.2</div>
+      <div>
+        <h3>We do not unpublish</h3>
+        <p>Published work stays published. We will not remove an accurate story because a subject, a sponsor or a promotion asks us to. In the rare case where a serious safety or legal reason forces removal, a note stays at the URL explaining that something was removed and why.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 4.3</div>
+      <div>
+        <h3>The archive is not for sale and not behind a wall</h3>
+        <p>The Record — results, promotions, transfers, brackets — stays free to read permanently, whatever else Matside ever charges for. The historical record of a sport should not be an asset any single company controls, which is precisely the problem this paper was started to answer.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 4.4</div>
+      <div>
+        <h3>How machine assistance is used</h3>
+        <p>Matside uses software, including AI tools, for research, transcription, translation, data checking and production. It is not used to generate reporting, quotes, or facts. Every published fact is verified by a person against a primary source, and a named human is responsible for every article.</p>
+        <p>No article is published as the work of a person who did not do the work.</p>
+      </div>
+    </div>
+
+    <div class="art">
+      <div class="n">§ 4.5</div>
+      <div>
+        <h3>Complaints reach a person</h3>
+        <p>Anyone may challenge a Matside story at <strong>standards@matside.com.au</strong>. We acknowledge within three working days and answer substantively within fourteen. If we were wrong we say so under § 4.1. If we were not, we explain why, and the reader is free to publish our answer in full.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="amend">
+    <h2>Amendments</h2>
+    <p>A charter that can be edited quietly is not a charter. This document is versioned. Every amendment is published with its date, the clause changed, and the reason for the change, and every previous version stays available at this address.</p>
+    <p>Where a Matside decision has departed from a clause below, that is recorded here too, whether or not anyone complained.</p>
+    <div class="log">
+      <div><span class="v">v1.1</span><span class="d">10 September 2026 — § 3.3 amended. As published, the clause restricted coverage of competitors under eighteen to “name, division, team and result”. Vol. 1 No. 1 breached it in the same paragraph that cited it, publishing an age and a belt rank. Belt and age are bracket classifications rather than private facts, and the clause was drawn too tightly to be kept. It now permits what the bracket records and forbids what it does not — including the projection about the +65kg champion's opponents that ran on 7 September and has since been removed.</span></div>
+      <div><span class="v">v1.0</span><span class="d">7 September 2026 — First publication, with Vol. 1 No. 1. No prior versions.</span></div>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <span>Matside · Standards &amp; Practice v1.1</span>
+    <span>The Cornerman, Editor · Melbourne</span>
+    <span>standards@matside.com.au · editor@matside.com.au</span>
+    <span>Instagram <a href="https://www.instagram.com/matside_bjj" rel="me noopener" target="_blank" style="color:var(--oob);text-decoration:none;text-transform:none;border-bottom:1px solid var(--rule)">@matside_bjj</a></span>
+  </footer>
+</div>
+</body>
+</html>

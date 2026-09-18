@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://matside.com.au/position/">
+<meta property="og:site_name" content="Matside">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Outside the Line">
+<meta property="og:description" content="Matside's brand argument — the enemy, the question, the evidence, the mark and the system.">
+<meta property="og:url" content="https://matside.com.au/position/">
+<meta name="twitter:card" content="summary">
+<title>Outside the Line</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700;6..96,900&family=Archivo:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#ECEDEA;
+  --paper-2:#E3E5E1;
+  --plate:#15191A;
+  --plate-ink:#E5E8E5;
+  --plate-mid:#8C9593;
+  --plate-rule:#2E3435;
+  --ink:#15191A;
+  --ink-soft:#3A4243;
+  --mid:#6B7375;
+  --rule:#C6CAC5;
+  --rule-soft:#D7DAD5;
+  --oob:#C8102E;
+  --box:#E7E9E5;
+
+  --f-plate:"Bodoni Moda",Didot,"Times New Roman",serif;
+  --f-head:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-data:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121516;
+    --paper-2:#191D1E;
+    --plate:#000000;
+    --plate-ink:#E5E8E5;
+    --plate-mid:#8C9593;
+    --plate-rule:#242A2B;
+    --ink:#E5E8E5;
+    --ink-soft:#B5BCBA;
+    --mid:#8C9593;
+    --rule:#2E3435;
+    --rule-soft:#242A2B;
+    --oob:#F0455A;
+    --box:#1A1E1F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121516;
+  --paper-2:#191D1E;
+  --plate:#000000;
+  --plate-ink:#E5E8E5;
+  --plate-mid:#8C9593;
+  --plate-rule:#242A2B;
+  --ink:#E5E8E5;
+  --ink-soft:#B5BCBA;
+  --mid:#8C9593;
+  --rule:#2E3435;
+  --rule-soft:#242A2B;
+  --oob:#F0455A;
+  --box:#1A1E1F;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:17px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:28px;padding-block:0 90px}
+:focus-visible{outline:2px solid var(--oob);outline-offset:3px}
+
+/* ── shared atoms ───────────────────────────── */
+.lbl{
+  font-family:var(--f-data);font-size:10.5px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--mid);
+}
+.oob-rule{height:5px;background:var(--oob)}
+.oob-rule.thin{height:2px}
+.kr{font-size:15.5px;line-height:1.75;color:var(--ink-soft);margin:0;word-break:keep-all}
+.en{font-size:16.5px;line-height:1.6;color:var(--ink-soft);margin:0}
+.src{
+  font-family:var(--f-data);font-size:10.5px;line-height:1.7;letter-spacing:.04em;
+  color:var(--mid);margin:10px 0 0;
+}
+.beat{margin-top:76px}
+.beat > .lbl{display:block;margin-bottom:14px}
+h2.beat-head{
+  font-family:var(--f-head);font-weight:800;
+  font-size:clamp(28px,4.2vw,46px);line-height:1.02;letter-spacing:-.026em;
+  margin:0;text-wrap:balance;
+}
+
+/* ── runhead + nameplate ────────────────────── */
+.runhead{
+  display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:baseline;
+  padding:18px 0 12px;
+  font-family:var(--f-data);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mid);
+}
+.runhead .pl{font-family:var(--f-plate);font-weight:900;font-size:20px;letter-spacing:0;text-transform:none;color:var(--ink)}
+
+.nameplate{border-top:1px solid var(--rule);padding-top:34px}
+.nameplate h1{
+  font-family:var(--f-plate);font-weight:900;
+  font-size:clamp(52px,12.5vw,152px);line-height:.84;letter-spacing:-.015em;
+  margin:0;text-align:center;font-variation-settings:"opsz" 96;
+}
+.nameplate .sub{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;
+  margin-top:16px;font-family:var(--f-head);font-size:10.5px;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--mid);
+}
+
+/* ── dark plates (full bleed) ───────────────── */
+.plate-band{
+  background:var(--plate);color:var(--plate-ink);
+  margin-inline:calc(50% - 50vw);padding-inline:max(28px,calc(50vw - 512px));
+  padding-block:72px;margin-top:76px;
+}
+.plate-band .lbl{color:var(--plate-mid)}
+
+.negate{
+  font-family:var(--f-head);font-weight:900;
+  font-size:clamp(34px,7vw,86px);line-height:.98;letter-spacing:-.034em;
+  margin:22px 0 0;text-wrap:balance;
+}
+.negate em{font-style:normal;color:var(--oob)}
+.negate-note{
+  margin:30px 0 0;max-width:44em;font-size:16.5px;line-height:1.6;color:var(--plate-mid);
+}
+
+.question{
+  font-family:var(--f-head);font-weight:800;
+  font-size:clamp(30px,5.6vw,64px);line-height:1.04;letter-spacing:-.03em;
+  margin:22px 0 0;max-width:17em;text-wrap:balance;
+}
+.question-kr{
+  margin:26px 0 0;max-width:34em;font-size:16px;line-height:1.75;
+  color:var(--plate-mid);word-break:keep-all;
+}
+
+/* ── two-language grid ──────────────────────── */
+.bi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 46px;margin-top:26px}
+.bi .col-kr{border-top:2px solid var(--ink);padding-top:14px}
+.bi .col-en{border-top:2px solid var(--oob);padding-top:14px}
+.bi .lbl{display:block;margin-bottom:10px}
+
+/* ── evidence ───────────────────────────────── */
+.ev{margin-top:34px;border-top:1px solid var(--rule)}
+.ev-row{
+  display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr) minmax(0,1fr);
+  gap:0 40px;padding:30px 0;border-bottom:1px solid var(--rule-soft);align-items:start;
+}
+.ev-fig{
+  font-family:var(--f-data);font-weight:600;font-variant-numeric:tabular-nums;
+  font-size:clamp(30px,4.4vw,46px);line-height:1;letter-spacing:-.02em;color:var(--ink);
+}
+.ev-name{
+  display:inline-block;margin-top:14px;padding:4px 9px;
+  font-family:var(--f-head);font-size:10.5px;font-weight:800;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--oob);border:1px solid var(--oob);
+}
+
+/* ── the mark ───────────────────────────────── */
+.mark-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:36px 46px;margin-top:30px;align-items:start}
+.mark-fig{border-top:2px solid var(--ink);padding-top:16px}
+.mark-fig svg{display:block;width:100%;height:auto;max-width:100%}
+.mark-cap{
+  font-family:var(--f-data);font-size:10.5px;line-height:1.7;letter-spacing:.04em;
+  color:var(--mid);margin:12px 0 0;
+}
+.wordmark-demo{
+  background:var(--box);border-top:2px solid var(--ink);
+  padding:34px 28px 26px;margin-top:30px;text-align:center;
+}
+.wordmark-demo .wm{
+  font-family:var(--f-plate);font-weight:900;font-size:clamp(38px,8vw,84px);
+  line-height:.9;letter-spacing:-.015em;margin:0;font-variation-settings:"opsz" 96;color:var(--ink);
+}
+.wordmark-demo .rule-holder{max-width:min(620px,100%);margin:14px auto 0}
+
+/* ── system matrix ──────────────────────────── */
+.matrix-scroll{overflow-x:auto;margin-top:30px}
+table.matrix{border-collapse:collapse;width:100%;min-width:880px}
+table.matrix th,table.matrix td{
+  text-align:left;vertical-align:top;padding:16px 16px 16px 0;
+  border-bottom:1px solid var(--plate-rule);
+}
+table.matrix thead th{
+  font-family:var(--f-data);font-size:10px;font-weight:600;letter-spacing:.16em;
+  color:var(--plate-mid);padding-bottom:10px;font-variant-numeric:tabular-nums;
+}
+table.matrix th.rowlbl{
+  width:132px;font-family:var(--f-data);font-size:9.5px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--plate-mid);
+  padding-right:24px;line-height:1.6;
+}
+.cell-en{font-family:var(--f-head);font-weight:800;font-size:15px;letter-spacing:-.01em;line-height:1.2;color:var(--plate-ink)}
+.cell-kr{font-size:13.5px;line-height:1.6;color:var(--plate-mid);margin-top:6px;word-break:keep-all}
+.row-design .cell-en{color:var(--oob);font-size:13px;letter-spacing:.06em}
+
+/* ── scale ──────────────────────────────────── */
+.scale{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 46px;margin-top:30px}
+.scale > div{border-top:3px solid var(--ink);padding-top:16px}
+.scale .k{font-family:var(--f-head);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--oob);display:block;margin-bottom:12px}
+.scale h3{font-family:var(--f-head);font-weight:800;font-size:clamp(20px,2.6vw,27px);line-height:1.1;letter-spacing:-.02em;margin:0 0 12px}
+.entry{
+  font-family:var(--f-data);font-size:12.5px;line-height:1.9;font-variant-numeric:tabular-nums;
+  background:var(--box);border-left:3px solid var(--oob);padding:12px 14px;margin:14px 0 0;
+  color:var(--ink);overflow-x:auto;
+}
+
+/* ── colophon ───────────────────────────────── */
+.colophon{
+  margin-top:80px;padding-top:20px;border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between;
+  font-family:var(--f-data);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--mid);
+}
+
+@media (max-width:860px){
+  .bi{grid-template-columns:minmax(0,1fr);gap:26px}
+  .ev-row{grid-template-columns:minmax(0,1fr);gap:16px}
+  .mark-grid{grid-template-columns:minmax(0,1fr)}
+  .scale{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .wrap{padding-inline:18px}
+  .plate-band{padding-inline:18px;padding-block:52px}
+  .beat{margin-top:56px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>
+  html{-webkit-text-size-adjust:100%}
+  @media print{
+    .plate-band{background:#fff !important;color:#15191A !important}
+    .plate-band .lbl,.negate-note,.question-kr,.cell-kr{color:#3A4243 !important}
+    .cell-en{color:#15191A !important}
+    .matrix-scroll{overflow:visible}
+    table.matrix{min-width:0}
+    .beat,.plate-band,.card,.art,.fixrow,.wire li{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="runhead">
+    <span class="pl">MATSIDE</span>
+    <span>Brand argument · 11 September 2026</span>
+    <span>Matside Media Pty Ltd · Melbourne</span>
+  </div>
+
+  <header class="nameplate">
+    <h1>OUTSIDE THE LINE</h1>
+    <div class="oob-rule" style="margin-top:16px"></div>
+    <div class="sub">
+      <span>The grappling paper of record — Asia &amp; Oceania desk</span>
+      <span>matside.com.au</span>
+    </div>
+  </header>
+
+  <!-- 1 ── THE ENEMY -->
+  <section class="plate-band">
+    <span class="lbl">01 — The enemy</span>
+    <p class="negate">NOT THE RIGHTSHOLDER.<br>NOT THE <em>FEED</em>.</p>
+    <p class="negate-note">그래플링을 가장 크게 보도하는 곳은 그래플링을 파는 회사다. 그 다음으로 큰 곳은 30초짜리 서브미션 클립을 고르는 알고리즘이다. 둘 다 기억을 만들지만, 둘 다 기록을 만들지 않는다.</p>
+    <p class="negate-note" style="color:var(--plate-ink)">The biggest newsroom in grappling belongs to the company that sells the events. The second biggest is an algorithm that selects thirty-second finishes. Both produce memory. Neither produces a record.</p>
+  </section>
+
+  <!-- 2 ── THE QUESTION -->
+  <section class="plate-band" style="margin-top:0;padding-top:0">
+    <div class="oob-rule thin" style="margin-bottom:56px"></div>
+    <span class="lbl">02 — The question</span>
+    <p class="question">Why does the company that sells the event also write its history?</p>
+    <p class="question-kr">FloSports는 ADCC의 전 세계 독점 중계권을 보유한다. 예선 8개, 아마추어 세계선수권, 세계선수권 전부. 그리고 같은 회사가 그래플링에서 가장 큰 편집국을 운영한다. 불법도 아니고 비밀도 아니다. 다만 이 스포츠는 독자에게만 의무를 지는 신문을 가져본 적이 없다.</p>
+  </section>
+
+  <!-- 3 ── THE OBSERVATION -->
+  <section class="beat">
+    <span class="lbl">03 — The observation</span>
+    <h2 class="beat-head">일요일 아침, 브래킷은 회색이 된다</h2>
+    <div class="bi">
+      <div class="col-kr">
+        <span class="lbl">한국어</span>
+        <p class="kr">토요일에 대회가 끝난다. 일요일 아침에 앱을 열면 이벤트는 이미 닫혀 있고 결과는 회색으로 비활성화되어 있다. 이름을 검색하면 인스타그램 클립 세 개가 나온다. 누가 −88kg을 이겼는지는 그날 그 체육관에 있던 사람만 안다.</p>
+        <p class="kr" style="margin-top:1em">다음 시즌이 되면 그 브래킷 링크는 죽는다. 아무도 삭제하지 않았다. 그냥 보관될 이유가 없었을 뿐이다.</p>
+      </div>
+      <div class="col-en">
+        <span class="lbl">English</span>
+        <p class="en">The tournament ends on Saturday. On Sunday morning the app has closed the event and the results are greyed out. Search a name and you get three Instagram clips. Who won the −88kg is known only to the people who were in the hall.</p>
+        <p class="en" style="margin-top:1em">By next season the bracket link is dead. Nobody deleted it. It simply had no reason to be kept.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 ── THE EVIDENCE -->
+  <section class="beat">
+    <span class="lbl">04 — The evidence</span>
+    <h2 class="beat-head">The vacancy is measurable</h2>
+    <div class="ev">
+
+      <div class="ev-row">
+        <div>
+          <div class="ev-fig">8 / 104</div>
+          <span class="ev-name">One trials, eight seats</span>
+        </div>
+        <div>
+          <p class="kr">ADCC 세계선수권 출전자는 104명이다. 카자흐스탄에서 뉴질랜드까지, 일본·한국·중국·홍콩을 포함한 아시아·오세아니아 전체가 배정받은 예선은 단 1회이고 그 자리는 8개다. 한 지역의 세계선수권 대표 전원이 하루 오후에 결정된다.</p>
+        </div>
+        <div>
+          <p class="en">104 competitors at the ADCC World Championship. Asia and Oceania — a region running from Kazakhstan to New Zealand — are allocated one qualifying event and eight of those places. A region's entire representation is settled in a single afternoon.</p>
+          <p class="src">ADCC official results, 2nd Asia &amp; Oceania Trials 2026 · Carrara, 21 June 2026</p>
+        </div>
+      </div>
+
+      <div class="ev-row">
+        <div>
+          <div class="ev-fig">2 · 11 · 0</div>
+          <span class="ev-name">Errors, weeks, corrections</span>
+        </div>
+        <div>
+          <p class="kr">그 여덟 명 중 두 명이 활자로 잘못 기록됐다. 여자 −55kg 챔피언의 성, 그리고 −77kg 챔피언의 국적. 11주가 지나도록 어느 매체도 원본을 정정하지 않았다. 두 건 모두 공식 결과와 대조하는 것만으로 드러났다.</p>
+        </div>
+        <div>
+          <p class="en">Two of those eight were misidentified in print — a champion's surname, and a champion's nationality. Eleven weeks on, neither had been corrected at source. Both were found by doing nothing more than checking against the official record.</p>
+          <p class="src">Matside, Vol. 1 No. 1 · verified against ADCC official results, 7 September 2026</p>
+        </div>
+      </div>
+
+      <div class="ev-row" style="border-bottom:0">
+        <div>
+          <div class="ev-fig">8.2</div>
+          <span class="ev-name">The desk is gone</span>
+        </div>
+        <div>
+          <p class="kr">인구 10만 명당 지역 기자 수. 2000년대 초에는 약 40명이었다. 지역 경기장을 취재하던 데스크는 사라졌지만, 취재할 대상은 사라지지 않았다.</p>
+        </div>
+        <div>
+          <p class="en">Local journalists per 100,000 residents, against roughly 40 in the early 2000s. The desk that used to cover the local sports hall is gone. The beat is not.</p>
+          <p class="src">Local Journalist Index — Rebuild Local News &amp; Muck Rack, July 2025 · US data</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5 ── THE MARK -->
+  <section class="beat">
+    <span class="lbl">05 — The mark</span>
+    <h2 class="beat-head">The line is not a graphic. It is a rule of the sport.</h2>
+
+    <div class="mark-grid">
+      <div>
+        <p class="kr" style="margin-top:20px">Courtside. Ringside. Pitchside. 모든 스포츠에는 기자가 앉는 자리를 부르는 단어가 있다. 그래플링에는 그 단어가 없었다. MATSIDE가 그 자리를 만든다.</p>
+        <p class="en" style="margin-top:1.1em">Courtside. Ringside. Pitchside. Every sport has a word for the seat the reporter takes. Grappling did not have one.</p>
+        <p class="kr" style="margin-top:1.1em">그리고 이름이 편집 원칙을 강제한다. 경기장에는 경계선이 있다. 선 안은 경기이고, 선 밖은 경기가 아니다. 제호 아래의 빨간 선은 장식이 아니라 그 선이다. 우리는 매트 위가 아니라 매트 옆에 앉는다 — 중계권도, 티켓도, 지분도 갖지 않은 채로.</p>
+        <p class="en" style="margin-top:1.1em">The name then enforces the editorial rule. A competition area has a boundary. Inside the line is the contest; outside it is not. The red rule under the nameplate is that line. We sit beside the mat, not on it — holding no rights, no tickets, no equity in anything we cover.</p>
+      </div>
+
+      <div class="mark-fig">
+        <span class="lbl" style="display:block;margin-bottom:14px">Fig. 1 — The out-of-bounds line</span>
+        <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: a competition mat with a red boundary line, and the Matside desk positioned outside it.">
+          <rect x="0" y="0" width="400" height="300" fill="none"></rect>
+          <rect x="64" y="40" width="272" height="200" fill="var(--box)" stroke="var(--rule)" stroke-width="1"></rect>
+          <rect x="92" y="66" width="216" height="148" fill="none" stroke="var(--oob)" stroke-width="4"></rect>
+          <text x="200" y="146" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="2.4" fill="var(--mid)">CONTEST</text>
+          <text x="200" y="164" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" fill="var(--mid)">IN BOUNDS</text>
+          <rect x="64" y="256" width="86" height="22" fill="var(--ink)"></rect>
+          <text x="107" y="271" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.6" fill="var(--paper)">MATSIDE</text>
+          <line x1="150" y1="267" x2="188" y2="267" stroke="var(--mid)" stroke-width="1"></line>
+          <text x="194" y="271" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" fill="var(--mid)">THE DESK SITS HERE</text>
+          <line x1="336" y1="66" x2="360" y2="66" stroke="var(--oob)" stroke-width="1"></line>
+          <text x="360" y="58" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" fill="var(--oob)">OUT OF BOUNDS</text>
+        </svg>
+        <p class="mark-cap">경계선 밖에 앉은 자리가 편집 원칙이 된다. 선을 넘으면 기록자가 아니라 당사자가 된다.</p>
+      </div>
+    </div>
+
+    <div class="wordmark-demo">
+      <p class="wm">MATSIDE</p>
+      <div class="rule-holder"><div class="oob-rule"></div></div>
+      <p class="mark-cap" style="text-align:center">Bodoni Moda 900 · the rule is 5px, and it is the only red on the page that is not a warning.</p>
+    </div>
+  </section>
+
+  <!-- 6 ── THE SYSTEM -->
+  <section class="plate-band">
+    <span class="lbl">06 — The system</span>
+    <h2 class="beat-head" style="color:var(--plate-ink);margin-top:14px">헌장이 그대로 디자인 시스템이 된다</h2>
+    <p class="negate-note" style="margin-top:14px">A rule we can be held to becomes a keyword. A keyword becomes a design decision.</p>
+
+    <div class="matrix-scroll">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th class="rowlbl"></th>
+            <th scope="col">01</th><th scope="col">02</th><th scope="col">03</th>
+            <th scope="col">04</th><th scope="col">05</th><th scope="col">06</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="rowlbl" scope="row">Core<br>value</th>
+            <td><div class="cell-en">The record is the asset</div><div class="cell-kr">기록이 자산이다</div></td>
+            <td><div class="cell-en">We sit outside the line</div><div class="cell-kr">선 밖에 앉는다</div></td>
+            <td><div class="cell-en">The bracket is the source</div><div class="cell-kr">브래킷이 원본이다</div></td>
+            <td><div class="cell-en">Correct, never delete</div><div class="cell-kr">고치되 지우지 않는다</div></td>
+            <td><div class="cell-en">The seller does not write</div><div class="cell-kr">파는 사람은 쓰지 않는다</div></td>
+            <td><div class="cell-en">Cadence is trust</div><div class="cell-kr">리듬이 신뢰다</div></td>
+          </tr>
+          <tr>
+            <th class="rowlbl" scope="row">Editorial<br>keyword</th>
+            <td><div class="cell-en">REGISTER</div><div class="cell-kr">명부를 남긴다</div></td>
+            <td><div class="cell-en">OUTSIDE</div><div class="cell-kr">당사자가 되지 않는다</div></td>
+            <td><div class="cell-en">PRIMARY</div><div class="cell-kr">2차 보도를 인용하지 않는다</div></td>
+            <td><div class="cell-en">IN PLACE</div><div class="cell-kr">정정은 그 자리에 남는다</div></td>
+            <td><div class="cell-en">NO RIGHTS</div><div class="cell-kr">중계권·지분을 갖지 않는다</div></td>
+            <td><div class="cell-en">WEEKLY</div><div class="cell-kr">한 주도 거르지 않는다</div></td>
+          </tr>
+          <tr class="row-design">
+            <th class="rowlbl" scope="row">Design<br>keyword</th>
+            <td><div class="cell-en">TABLE</div><div class="cell-kr">표가 주인공이다</div></td>
+            <td><div class="cell-en">RULE</div><div class="cell-kr">경계선 한 줄</div></td>
+            <td><div class="cell-en">MONO</div><div class="cell-kr">데이터는 등폭으로</div></td>
+            <td><div class="cell-en">DATED</div><div class="cell-kr">모든 변경에 날짜</div></td>
+            <td><div class="cell-en">PLAIN</div><div class="cell-kr">기록 면에 광고 없음</div></td>
+            <td><div class="cell-en">FOLIO</div><div class="cell-kr">호수와 발행일 고정</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 7 ── THE SCALE -->
+  <section class="beat">
+    <span class="lbl">07 — The proof</span>
+    <h2 class="beat-head">가장 작은 접점과 가장 큰 접점</h2>
+    <p class="en" style="margin-top:16px;max-width:44em">A worldview is real when it holds at both extremes. Here are ours.</p>
+
+    <div class="scale">
+      <div>
+        <span class="k">Smallest</span>
+        <h3>한 줄. 철자가 맞는 이름 하나.</h3>
+        <p class="kr">한 선수의 이름, 국적, 소속, 체급, 성적. 그 한 줄이 정확한지 아닌지가 이 매체의 존재 이유 전부다. 다른 매체가 11주 동안 틀리게 싣고 있던 그 이름이다.</p>
+        <div class="entry">W −55 &nbsp;│&nbsp; 1st &nbsp;│&nbsp; Kanae Ikeda &nbsp;│&nbsp; JPN &nbsp;│&nbsp; IGLOO</div>
+        <p class="en" style="margin-top:14px">One line: name, nation, team, division, placing. Whether that line is right is the whole reason this paper exists. It is the name two outlets had wrong for eleven weeks.</p>
+      </div>
+      <div>
+        <span class="k">Largest</span>
+        <h3>지역 전체의 영구 검색 아카이브.</h3>
+        <p class="kr">아시아·오세아니아에서 열리는 모든 대회의 결과·브래킷·승급을, 검색 가능한 형태로, 유료화 없이, 영구히. 한 스포츠의 역사적 기록이 한 회사의 자산이 되어서는 안 된다 — 그것이 이 신문이 답하려는 문제 그 자체다.</p>
+        <div class="entry">matside.com.au/register/2026/ &nbsp;→&nbsp; permanent · free · corrected in place</div>
+        <p class="en" style="margin-top:14px">Every result, bracket and promotion in the region — searchable, free, and permanent. The historical record of a sport should not be an asset any single company controls, which is precisely the problem this paper was started to answer.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="oob-rule" style="margin-top:70px"></div>
+
+  <footer class="colophon">
+    <span>Matside · Brand argument · Melbourne, Australia</span>
+    <span>Set in Bodoni Moda, Archivo, Source Serif 4 &amp; IBM Plex Mono</span>
+    <span>editor@matside.com.au</span>
+    <span>Instagram <a href="https://www.instagram.com/matside_bjj" rel="me noopener" target="_blank" style="color:var(--oob);text-decoration:none;text-transform:none;border-bottom:1px solid var(--rule)">@matside_bjj</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

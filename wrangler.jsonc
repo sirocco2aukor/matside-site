@@ -1,0 +1,18 @@
+{
+  // Matside — matside.com.au
+  // 정적 사이트를 Cloudflare Workers(static assets)로 배포한다.
+  // 이 저장소가 Worker에 연결되면, main 브랜치에 푸시할 때마다 Cloudflare가 빌드·배포한다.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "silent-butterfly-db25",
+  "compatibility_date": "2026-09-18",
+  "assets": {
+    "directory": "./public",
+    // /foo/index.html -> /foo/ 로 정규화 (주소창에서 index.html 제거)
+    "html_handling": "auto-trailing-slash",
+    // 없는 경로는 404.html 을 200이 아닌 404로 돌려준다
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
