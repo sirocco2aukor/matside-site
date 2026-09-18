@@ -4,7 +4,7 @@
   // 이 저장소가 Worker에 연결되면, main 브랜치에 푸시할 때마다 Cloudflare가 빌드·배포한다.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "silent-butterfly-db25",
-  "compatibility_date": "2026-09-18",
+  "compatibility_date": "2026-09-14",
   "assets": {
     "directory": "./public",
     // /foo/index.html -> /foo/ 로 정규화 (주소창에서 index.html 제거)
