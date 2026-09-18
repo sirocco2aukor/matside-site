@@ -1,0 +1,6 @@
+Matside 배포 파이프라인 검증 표식
+generated: 2026-09-18T12:58:01Z
+commit: (this commit)
+이 파일이 matside.com.au/deploy-check.txt 에서 보이면
+GitHub 푸시 -> Cloudflare 자동 배포가 동작하는 것이다.
+검증 후 삭제한다.
